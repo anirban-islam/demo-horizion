@@ -1,23 +1,34 @@
 <!doctype html>
 <html lang="{{ request.locale.iso_code }}">
   <head>
-    {% # Inlined CSS Variables %}
-    {% render 'css-variables' %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="{{ page.meta_description }}">
+    <title>{{ page_title }}</title>
+    <link rel="canonical" href="{{ canonical_url }}">
 
-    {% # Load and preload the critical CSS %}
-    {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
-
-    {% # Social, title, etc. %}
-    {% render 'meta-tags' %}
-
+    {% comment %} All CSS Files {% endcomment %}
+    {{ 'bootstrap.css' | asset_url | stylesheet_tag }}
+    {{ 'critical.css' | asset_url | stylesheet_tag }}
     {{ content_for_header }}
   </head>
 
-  <body>
-    {% sections 'header-group' %}
 
-    {{ content_for_layout }}
+  <body id="{{ page_title |handleize }}" class="{{ template }} {% if template.name=='product'%}{{product.handle}}{% endif %} {% if template.name=='collection'%}{{product.handle}}{% endif %}">
 
-    {% sections 'footer-group' %}
+    {% comment %} Header {% endcomment %}
+    {% section 'header' %}
+
+    {% comment %} Main Content {% endcomment %}
+    <main>
+      {{ content_for_layout }}
+    </main>
+    
+
+  {% comment %} All Javascript files {% endcomment %}
+   <script src="{{ 'jquery.js' | asset_url }}" defer></script>
+   <script src="{{ 'popper.js' | asset_url }}" defer></script>
+   <script src="{{ 'bootstrap.js' | asset_url }}" defer></script>
   </body>
 </html>

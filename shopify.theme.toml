@@ -1,0 +1,5 @@
+[environments.basic]
+store="shop-world-bd"           
+store-password="anirban"    
+theme="demo-horizion/main" 
+theme-editor-sync=true   
