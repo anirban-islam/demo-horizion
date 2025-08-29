@@ -18,9 +18,39 @@
         "show_account_icon": false,
         "show_cart_icon": true
       }
+    },
+    "header_VUKDkK": {
+      "type": "header",
+      "blocks": {
+        "link_aEFxMP": {
+          "type": "link",
+          "settings": {
+            "label": "Home",
+            "url": "/"
+          }
+        },
+        "link_tHhJfi": {
+          "type": "link",
+          "settings": {
+            "label": "Shop",
+            "url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "link_aEFxMP",
+        "link_tHhJfi"
+      ],
+      "name": "t:general.header",
+      "settings": {
+        "logo": "shopify://shop_images/estore_inc_cover-removebg-preview.png",
+        "show_account_icon": true,
+        "show_cart_icon": true
+      }
     }
   },
   "order": [
-    "header"
+    "header",
+    "header_VUKDkK"
   ]
 }
