@@ -18,7 +18,7 @@
   <body id="{{ page_title |handleize }}" class="{{ template }} {% if template.name=='product'%}{{product.handle}}{% endif %} {% if template.name=='collection'%}{{product.handle}}{% endif %}">
 
     {% comment %} Header {% endcomment %}
-    {% section 'header' %}
+    {% sections 'header-group' %}
 
     {% comment %} Main Content {% endcomment %}
     <main>
